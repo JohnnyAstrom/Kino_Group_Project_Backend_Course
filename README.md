@@ -1,4 +1,4 @@
-# Kino_Group_Project
+# Kino_Group_Project_Backend_Course
 
 Quick guide for the project.
 
