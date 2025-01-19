@@ -1,0 +1,13 @@
+@use './lib.scss' as *;
+
+.backend-movies-container {
+  margin-left: 1rem;
+}
+
+.backend-movies-movie-container {
+  margin: 1rem;
+}
+
+.backend-movies-movie-container img {
+  max-width: 800px;
+}

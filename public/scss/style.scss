@@ -1,0 +1,24 @@
+@use 'lib' as *;
+@use 'index';
+@use 'kids';
+@use 'about';
+@use 'header';
+@use 'infoModal';
+@use 'footer';
+@use 'movies';
+@use 'backend-movies';
+
+* {
+  font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+}
+html {
+  background-color: $background-color;
+  color: $text-color-main;
+}
+body {
+  padding: 0;
+  margin: 0;
+  max-width: $screen-max;
+  margin: auto;
+}
