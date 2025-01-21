@@ -77,13 +77,13 @@ function createNavigation(headerData) {
     //Using a switch that adds the href attribute depending on the link text. This can be updated when we get more webpages online.
     switch (link.text) {
       case 'Aktuella filmer':
-        menuLink.href = 'movies';
+        menuLink.href = '/movies';
         break;
       case 'Om oss':
-        menuLink.href = 'about';
+        menuLink.href = '/about';
         break;
       case 'Barnkalas':
-        menuLink.href = 'kids';
+        menuLink.href = '/kids';
         break;
       default:
         menuLink.href = '#';

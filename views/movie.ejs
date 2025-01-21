@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= movie.attributes.title %></title>
+    <title>Movies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -13,9 +13,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <base href="/">
   </head>
 
   <body>
+    <header>
+      <div id="navigation-menu"></div>
+    </header>
     <main>
       <div class="backend-movies-movie-container">
         <h1><%= movie.attributes.title %></h1>
@@ -24,5 +28,7 @@
         <p><a href="/movies">Back to movies</a></p>
       </div>
     </main>
+    <footer class="footer-container"></footer>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

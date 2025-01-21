@@ -1,12 +1,12 @@
 {
   "barnkalas": [
     {
-      "imgHero": "./img/heroBarnkalas.png",
-      "imgHeroDesktop": "./img/heroBarnkalasDesktop.png",
+      "imgHero": "/img/heroBarnkalas.png",
+      "imgHeroDesktop": "/img/heroBarnkalasDesktop.png",
       "imgAltHero": "ballons",
-      "imgTextDesktop": "./img/heroText.png",
+      "imgTextDesktop": "/img/heroText.png",
       "imgAltDesktop": "barnkalas på Kino bio",
-      "imgTextMobile": "./img/KINO.png",
+      "imgTextMobile": "/img/KINO.png",
       "imgAltMobile": "Kino",
       "titelMobile": "Boka kalas idag!",
       "titelDesktop": "Boka barnkalas idag!",
