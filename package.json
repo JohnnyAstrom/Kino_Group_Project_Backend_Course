@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build-css": "npx sass public/scss/style.scss public/css/style.css",
-    "start": "node server.js",
-    "test": "jest",
+    "start": "node server-start.js",
+    "test": "jest --verbose",
     "prepare": "husky install"
   },
   "husky": {

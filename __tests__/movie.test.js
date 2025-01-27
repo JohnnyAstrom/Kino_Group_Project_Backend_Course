@@ -1,31 +1,19 @@
-import axios from 'axios';
+import request from 'supertest';
+import app from '../server';
 
-jest.mock('axios');
+describe('Movie Pages (SSR)', () => {
+  it('Return the correct movie title', async () => {
+    const movieId = 1;
+    const response = await request(app).get(`/movie/${movieId}`);
 
-describe('Movie API', () => {
-  it('should return an array of movies', async () => {
-    axios.get.mockResolvedValue({
-      data: [
-        { id: 1, title: 'Movie 1', intro: 'Intro text 1' },
-        { id: 2, title: 'Movie 2', intro: 'Intro text 2' },
-      ],
-    });
-
-    const response = await axios.get('https://plankton-app-xhkom.ondigitalocean.app/api/movies');
-
-    expect(response.data).toBeInstanceOf(Array);
-    expect(response.data.length).toBe(2);
-    expect(response.data[0].title).toBe('Movie 1');
-    expect(response.data[0].intro).toBe('Intro text 1');
+    expect(response.text).toContain('<h1>Isle of dogs</h1>');
   });
 
-  it('should handle error if movie is not found', async () => {
-    axios.get.mockRejectedValue(new Error('Movie not found'));
+  it('Return a 404 page for a non-existent movie', async () => {
+    const movieId = 99999;
+    const response = await request(app).get(`/movie/${movieId}`);
 
-    try {
-      await axios.get('https://plankton-app-xhkom.ondigitalocean.app/api/movies/999');
-    } catch (error) {
-      expect(error.message).toBe('Movie not found');
-    }
+    expect(response.status).toBe(404);
+    expect(response.text).toContain('The movie could not be found');
   });
 });

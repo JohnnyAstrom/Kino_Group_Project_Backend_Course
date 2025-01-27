@@ -4,10 +4,8 @@ import MarkdownIt from 'markdown-it';
 const md = new MarkdownIt();
 
 const app = express();
-const port = 5080;
 
 app.use(express.static('public'));
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -44,12 +42,11 @@ app.get('/movie/:id', async (req, res) => {
     const response = await axios.get(`https://plankton-app-xhkom.ondigitalocean.app/api/movies/${movieId}`);
     const movie = response.data.data;
     const introHtml = md.render(movie.attributes.intro);
+
     res.render('movie', { movie, introHtml });
   } catch (error) {
     res.status(404).send('The movie could not be found');
   }
 });
 
-app.listen(port, () => {
-  console.log(`The server runs on http://localhost:${port}`);
-});
+export default app;
